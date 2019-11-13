@@ -337,4 +337,5 @@ $RECYCLE.BIN/
 .idea/vcs.xml
 
 db.sqlite3
+db.mysql
 
