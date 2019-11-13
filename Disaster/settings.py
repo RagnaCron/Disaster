@@ -31,6 +31,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'Newsletter_Overview',
+    'Newsletter_Sender',
+    'MJML_Editor',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
