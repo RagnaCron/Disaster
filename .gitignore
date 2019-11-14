@@ -1,7 +1,7 @@
 # Created by https://www.gitignore.io/api/node,linux,python,pycharm,windows
 # Edit at https://www.gitignore.io/?templates=node,linux,python,pycharm,windows
 
-
+venv/*
 .idea
 db.*
 
