@@ -31,10 +31,12 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'crispy_forms',
+    'commons.apps.CommonsConfig',
     'Newsletter_Overview.apps.NewsletterOverviewConfig',
     'Newsletter_Sender.apps.NewsletterSenderConfig',
     'MJML_Editor.apps.MjmlEditiorConfig',
-    'commons.apps.CommonsConfig',
+
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -53,6 +55,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 ROOT_URLCONF = 'Disaster.urls'
 
