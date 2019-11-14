@@ -19,6 +19,6 @@ from django.urls import path, include
 urlpatterns = [
     path('', include('Newsletter_Overview.urls')),
     # path('send/', include('Newsletter_Sender.urls')),
-    # path('editor/', include('MJML_Editor.urls')),
+    path('editor/', include('MJML_Editor.urls')),
     path('admin/', admin.site.urls),
 ]
