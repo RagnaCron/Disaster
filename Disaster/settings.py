@@ -31,9 +31,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'Newsletter_Overview',
-    'Newsletter_Sender',
-    'MJML_Editor',
+    'Newsletter_Overview.apps.NewsletterOverviewConfig',
+    'Newsletter_Sender.apps.NewsletterSenderConfig',
+    'MJML_Editor.apps.MjmlEditiorConfig',
+    'commons.apps.CommonsConfig',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -59,6 +60,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
+        # 'DIRS': ['Newsletter_Overview', 'Newsletter_Sender', 'MJML_Editor'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
