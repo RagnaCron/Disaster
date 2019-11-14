@@ -1,8 +1,10 @@
 {% extends 'commons/Base.html' %}
 
+{% block title %}Newsletter Login{% endblock title %}
+
 {% load crispy_forms_tags %}
 
 {% block body %}
-  {% crispy form %}
+  {% crispy user_login %}
 {% endblock %}
 

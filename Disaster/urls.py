@@ -17,8 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('', include('Newsletter_Overview.urls')),
-    # path('send/', include('Newsletter_Sender.urls')),
-    path('editor/', include('MJML_Editor.urls')),
+    path('Newsletter/', include('Newsletter_Overview.urls')),
+    path('Newsletter/Editor/', include('MJML_Editor.urls')),
+    # path('Newsletter/Send/', include('Newsletter_Sender.urls')),
     path('admin/', admin.site.urls),
 ]

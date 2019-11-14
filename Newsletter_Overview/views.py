@@ -1,18 +1,31 @@
-from django.views.generic import UpdateView
+from django.views.generic import FormView
 from django.shortcuts import render
-from Newsletter_Overview.forms.Newsletter_Overview.Overview_Forms import LoginForm
-from Newsletter_Overview.models import User
+
+from Newsletter_Overview.forms.Newsletter_Overview.Hello_Form import HelloForm
+from Newsletter_Overview.forms.Newsletter_Overview.Login_Form import LoginForm
+
 
 # Create your views here.
 
+class HelloView(FormView):
+    form_class = HelloForm
+    template_name = 'Newsletter_Overview/Newsletter_Hello.html'
+    success_url = '/Login/'
 
-def home(request):
-	return render(request, 'Newsletter_Overview/Newsletter_Overview.html', {'message': ''})
+    def get(self, request, *args, **kwargs):
+        hello_user = HelloForm()
+        return render(self.request, self.template_name, {'hello_user': hello_user})
 
 
-class LoginView(UpdateView):
-    model = User
+class LoginView(FormView):
     form_class = LoginForm
-    template_name = 'people/person_update_form.html'
+    template_name = 'Newsletter_Overview/Newsletter_Login.html'
+    success_url = '/Newsletter/Overview/'
+
+    def get(self, request, *args, **kwargs):
+        user_login = LoginForm()
+        return render(self.request, self.template_name, {'user_login': user_login})
 
 
+def overview(request):
+    return render(request, 'Newsletter_Overview/Newsletter_Overview.html', {'message': ''})

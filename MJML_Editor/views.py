@@ -3,5 +3,5 @@ from django.shortcuts import render
 # Create your views here.
 
 
-def choose(request):
-    return render(request, "MJML_Editor/Choose_MJML.html")
+def editor(request):
+    return render(request, "MJML_Editor/MJML_Editor.html")
