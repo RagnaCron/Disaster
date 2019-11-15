@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'Newsletter_Overview.apps.NewsletterOverviewConfig',
     'Newsletter_Sender.apps.NewsletterSenderConfig',
     'MJML_Editor.apps.MjmlEditiorConfig',
-
+    'mjml',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -135,3 +135,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# MJML Configuration to compile
+MJML_BACKEND_MODE = 'cmd'
+MJML_EXEC_CMD = 'mjml'
