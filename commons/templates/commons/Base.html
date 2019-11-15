@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height: 100%">
 <head>
     <meta charset="UTF-8">
 
@@ -12,15 +12,16 @@
     <title>{% block title %}{% endblock title %}</title>
 
 </head>
-<body>
 
-    <div class="container-fluid">
-      <div class="row justify-content-center">
-        <div class="col-12">
-          <div class="mt-s2">
+<body style="height: 100%">
+
+    <div class="container-fluid p-0 m-0" style="height: 100%">
+      <div class="row justify-content-center p-0 m-0" style="height: 100%">
+        <div class="col-12 p-0 m-0" style="height: 100%">
+          <div class="mt-s2 p-0 m-0">
               {% block header %}{% endblock header %}
           </div>
-          <hr class="mt-0 mb-4">
+
           {% block body %}
 
           {% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'commons/Base.html' %}
+
+{% block title %}MJML Newsletter{% endblock title %}
+
+{% block body %}
+
+    <div class="container-fluid p-0 m-0" style="height: 100%">
+        <div class="row p-0 m-0" style="height: 100%">
+            <div class="col-2 p-0 m-0" id="sticky-sidebar" style="height: 100%">
+                <div class="sticky-top" style="height: 100%">
+                    <ul class="nav flex-column border" style="height: 100%">
+                        <li class="nav-item">
+                            <div class="container d-flex justify-content-around align-items-center text-light bg-warning" style="height: 7rem;">
+                                <h1>Elemente</h1>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <div class="container d-flex align-items-center border border-right-0 border-left-0" style="height: 4rem;">
+                                <p>1- Spaltenlayout</p>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <div class="container d-flex align-items-center border border-right-0 border-left-0" style="height: 4rem;">
+                                <p>2- Spaltenlayout</p>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <div class="container d-flex align-items-center border border-right-0 border-left-0" style="height: 4rem;">
+                                <p>3- Spaltenlayout</p>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <div class="container d-flex align-items-center border border-right-0 border-left-0" style="height: 4rem;">
+                                <p>Linien-Separator</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col p-0 m-0 bg-light">
+                <div class="container-fluid d-flex justify-content-around align-items-center" style="height: 90%">
+                    <h1>Main Area</h1>
+                </div>
+                <div class="container-fluid bg-white d-flex align-items-center justify-content-end border border-left-0" style="height: 10%">
+                    <ul class="navbar-nav flex-row">
+                        <li class="nav-item p-2">
+                            <button type="button" class="btn btn-dark">Reset</button>
+                        </li>
+                        <li class="nav-item p-2 ml-auto">
+                            <button type="button" class="btn btn-dark">Send</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}
