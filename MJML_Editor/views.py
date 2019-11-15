@@ -5,3 +5,7 @@ from django.shortcuts import render
 
 def editor(request):
     return render(request, "MJML_Editor/MJML_Editor.html")
+
+
+def create(request):
+    return render(request, "MJML_Editor/MJML_Create.html")
