@@ -2,8 +2,10 @@
 
 {% block title %}Send Emails{% endblock title %}
 
-{% block header %}{% endblock header %}
+{% block header %}{% include 'commons/Header.html' %}{% endblock header %}
+
+{% load crispy_forms_tags %}
 
 {% block body %}
-
+    {% crispy contact %}
 {% endblock body %}

@@ -1,5 +1,5 @@
 from django.views.generic import FormView
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from Newsletter_Overview.forms.Newsletter_Overview.Hello_Form import HelloForm
 from Newsletter_Overview.forms.Newsletter_Overview.Login_Form import LoginForm
@@ -10,7 +10,7 @@ from Newsletter_Overview.forms.Newsletter_Overview.Login_Form import LoginForm
 class HelloView(FormView):
     form_class = HelloForm
     template_name = 'Newsletter_Overview/Newsletter_Hello.html'
-    success_url = '/Login/'
+    success_url = '/Newsletter/Login/'
 
     def get(self, request, *args, **kwargs):
         hello_user = HelloForm()
