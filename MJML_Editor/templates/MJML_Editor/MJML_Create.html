@@ -39,7 +39,22 @@
             </div>
             <div class="col p-0 m-0 bg-light">
                 <div class="container-fluid d-flex justify-content-around align-items-center" style="height: 90%">
-                    <h1>Main Area</h1>
+                    {% load mjml %}
+
+                    {% mjml %}
+                        <mjml>
+                            <mj-body>
+                                <mj-container>
+                                    <mj-section>
+                                        <mj-column>
+                                            <mj-text>Hello world!</mj-text>
+                                        </mj-column>
+                                    </mj-section>
+                                </mj-container>
+                            </mj-body>
+                        </mjml>
+                    {% endmjml %}
+
                 </div>
                 <div class="container-fluid bg-white d-flex align-items-center justify-content-end border border-left-0" style="height: 10%">
                     <ul class="navbar-nav flex-row">
