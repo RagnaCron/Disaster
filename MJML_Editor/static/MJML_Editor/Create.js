@@ -58,6 +58,6 @@ function drop(event) {
         let newSection = document.createElement("div");
         workPlace.appendChild(newSection);
         newSection.innerHTML += dragged;
-        var editor = new FroalaEditor('#editor')
+        let editor = new FroalaEditor('#editor')
     }
 }
