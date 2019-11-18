@@ -5,59 +5,60 @@
 {% block body %}
 
     <div class="container-fluid p-0 m-0" style="height: 100%">
-        <div class="row p-0 m-0" style="height: 100%">
-            <div class="col-2 p-0 m-0" style="height: 100%">
-                <div class="sticky-top" style="height: 100%">
-                    <ul class="nav flex-column border" style="height: 100%">
-                        <li class="nav-item">
-                            <div class="container d-flex justify-content-around align-items-center text-light bg-warning" style="height: 7rem;">
-                                <h1>Elemente</h1>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <div class="container d-flex align-items-center border border-right-0 border-left-0" id="spalte1" draggable="true" ondragstart="drag(event)" style="height: 4rem;">
-                                <p>1- Spaltenlayout</p>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <div class="container d-flex align-items-center border border-right-0 border-left-0" id="spalte2" draggable="true" ondragstart="drag(event)" style="height: 4rem;">
-                                <p>2- Spaltenlayout</p>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <div class="container d-flex align-items-center border border-right-0 border-left-0" id="spalte2" draggable="true" ondragstart="drag(event)" style="height: 4rem;">
-                                <p>3- Spaltenlayout</p>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <div class="container d-flex align-items-center border border-right-0 border-left-0" id="trennlinie" draggable="true" ondragstart="drag(event)" style="height: 4rem;">
-                                <p>Linien-Separator</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+        <nav class="col-2 p-0 m-0 sidebar border fixed-top bg-white" style="height: 100%">
+            <div class="sidebar-sticky" style="height: 100%">
+                <ul class="nav flex-column" style="height: 100%">
+                    <li class="nav-item">
+                        <div class="container d-flex justify-content-around align-items-center text-light bg-warning" style="height: 7rem;">
+                            <h1>Elemente</h1>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="container d-flex align-items-center border border-right-0 border-left-0" id="spalte1" draggable="true"
+                             ondragstart="drag(event)" style="height: 4rem;">
+                            <p>1- Spaltenlayout</p>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="container d-flex align-items-center border border-right-0 border-left-0" id="spalte2" draggable="true"
+                             ondragstart="drag(event)" style="height: 4rem;">
+                            <p>2- Spaltenlayout</p>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="container d-flex align-items-center border border-right-0 border-left-0" id="spalte2" draggable="true"
+                             ondragstart="drag(event)" style="height: 4rem;">
+                            <p>3- Spaltenlayout</p>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="container d-flex align-items-center border border-right-0 border-left-0" id="trennlinie" draggable="true"
+                             ondragstart="drag(event)" style="height: 4rem;">
+                            <p>Linien-Separator</p>
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <div class="col p-0 m-0 bg-light">
-                <div class="container-fluid d-flex justify-content-center align-items-center flex-column" id="workPlace" ondrop="drop(event)" ondragover="allowDrop(event)" style="min-height: 90%">
-                </div>
-                <div class="container-fluid bg-white d-flex align-items-center justify-content-end border border-left-0" style="height: 10%">
-                    <ul class="navbar-nav flex-row">
-                        <li class="nav-item p-2">
-                            <button type="button" class="btn btn-dark">Quit</button>
-                        </li>
-                        <li class="nav-item p-2">
-                            <button type="button" class="btn btn-dark">Reset</button>
-                        </li>
-                        <li class="nav-item p-2">
-                            <button type="button" class="btn btn-dark">Save</button>
-                        </li>
-                        <li class="nav-item p-2 ml-auto">
-                            <button type="button" class="btn btn-dark">Save & Send</button>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+        </nav>
+        <div class="container-fluid d-flex flex-column bg-light" id="workPlace" ondrop="drop(event)"
+             ondragover="allowDrop(event)" style="height: 90%; padding-left: 18%;">
         </div>
+        <footer class="container-fluid bg-white d-flex align-items-center justify-content-end border border-left-0 fixed-bottom" style="height: 10%">
+            <ul class="navbar-nav flex-row">
+                <li class="nav-item p-2">
+                    <button type="button" class="btn btn-dark">Quit</button>
+                </li>
+                <li class="nav-item p-2">
+                    <button type="button" class="btn btn-dark">Reset</button>
+                </li>
+                <li class="nav-item p-2">
+                    <button type="button" class="btn btn-dark">Save</button>
+                </li>
+                <li class="nav-item p-2 ml-auto">
+                    <button type="button" class="btn btn-dark">Save & Send</button>
+                </li>
+            </ul>
+        </footer>
     </div>
     {% load static %}
     <script src="{% static 'MJML_Editor/Create.js' %}"></script>

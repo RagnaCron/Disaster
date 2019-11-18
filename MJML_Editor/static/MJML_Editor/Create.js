@@ -135,19 +135,21 @@ function drop(event) {
     }
     if (workPlace.childElementCount > 0) {
         for (let i = 0; i < workPlace.childElementCount; i++) {
-            let contains = workPlace.children[i].contains(event.target)
+            let contains = workPlace.children[i].contains(event.target);
             if (contains){
                 let newSection = document.createElement("div");
                 workPlace.insertBefore(newSection, workPlace.children[i].nextSibling);
                 newSection.innerHTML += dragged;
-                var editor = new FroalaEditor('#editor')
+                var editor = new FroalaEditor('#editor');
                 break;
             }
         }
     } else {
         let newSection = document.createElement("div");
         workPlace.appendChild(newSection);
+        newSection.style.marginTop = "30px";
         newSection.innerHTML += dragged;
         let editor = new FroalaEditor('#editor')
     }
+    workPlace.style.overflowY = "scroll";
 }
