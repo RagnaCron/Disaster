@@ -4,6 +4,74 @@ let spalte1Template;
 let spalte2Template;
 let spalte3Template;
 let trennlinieTemplate;
+let headerTemplate;
+
+function initializeHeader() {
+    headerTemplate = `
+    <div style="">
+    <div style="background:white;background-color:white;margin:0px auto;max-width:1200px;">
+      <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:white;background-color:white;width:100%;">
+        <tbody>
+          <tr>
+            <td style="direction:ltr;font-size:0px;padding:20px 0;text-align:center;">
+              <div class="mj-column-px-1200 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+                <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
+                  <tr>
+                    <td align="right" style="font-size:0px;padding:10px 25px;word-break:break-word;">
+                      <div style="font-family:Helvetica Neue;font-size:20px;font-style:italic;line-height:1;text-align:right;color:#626262;">sdasdasdasdad</div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="background:white;background-color:white;margin:0px auto;max-width:1200px;">
+      <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:white;background-color:white;width:100%;">
+        <tbody>
+          <tr>
+            <td style="direction:ltr;font-size:0px;padding:20px 0;text-align:center;">
+              <div class="mj-column-px-1200 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+                <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
+                  <tr>
+                    <td style="font-size:0px;padding:10px 25px;word-break:break-word;">
+                      <p style="border-top:solid 1px #000000;font-size:1;margin:0px auto;width:100%;"> </p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="background:white;background-color:white;margin:0px auto;max-width:1200px;">
+      <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:white;background-color:white;width:100%;">
+        <tbody>
+          <tr>
+            <td style="direction:ltr;font-size:0px;padding:20px 0;text-align:center;">
+              <div class="mj-column-px-1200 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+                <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
+                  <tr>
+                    <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
+                      <div style="font-family:Helvetica Neue;font-size:20px;font-style:italic;line-height:1;text-align:left;color:#626262;">
+                        <mj-raw>
+                          <div id="editor"></div>
+                        </mj-raw>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>`;
+}
 
 function initializeTemplate1() {
     spalte1Template = `
@@ -174,6 +242,10 @@ function initializeTrennlinie() {
   </div>`;
 }
 
+function reset() {
+    workPlace.innerHTML = "";
+}
+
 function allowDrop(event) {
     event.preventDefault();
 }
@@ -214,8 +286,8 @@ function drop(event) {
         let newSection = document.createElement("div");
         workPlace.appendChild(newSection);
         newSection.style.marginTop = "30px";
-        initializeTemplate1();
-        newSection.innerHTML += spalte1Template;
+        initializeHeader();
+        newSection.innerHTML += headerTemplate;
         let editor = new FroalaEditor('#editor')
     }
     workPlace.style.overflowY = "scroll";
