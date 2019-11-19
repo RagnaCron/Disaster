@@ -46,7 +46,7 @@
         <footer class="container-fluid bg-white d-flex align-items-center justify-content-end border border-left-0 fixed-bottom" style="height: 10%">
             <ul class="navbar-nav flex-row">
                 <li class="nav-item p-2">
-                    <button type="button" class="btn btn-dark">Quit</button>
+                    <a href="{% url 'editor:editor' %}"><button type="button" class="btn btn-dark">Quit</button></a>
                 </li>
                 <li class="nav-item p-2">
                     <button type="button" onclick="reset()" class="btn btn-dark">Reset</button>
