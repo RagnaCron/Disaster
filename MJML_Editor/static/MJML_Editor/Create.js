@@ -249,7 +249,8 @@ function initializeTemplate3() {
 }
 
 function initializeTrennlinie() {
-    trennlinie_template = `<div style="">
+    trennlinie_template = `
+  <div style="">
     <div style="background-color:white;margin:0px auto;max-width:1200px;">
       <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;">
         <tbody>
