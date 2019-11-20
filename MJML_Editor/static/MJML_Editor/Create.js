@@ -1,13 +1,14 @@
-let workPlace = document.getElementById("workPlace");
+let work_place = document.getElementById("workPlace");
 
-let spalte1Template;
-let spalte2Template;
-let spalte3Template;
-let trennlinieTemplate;
-let headerTemplate;
+let spalte1_template;
+let spalte2_template;
+let spalte3_template;
+let trennlinie_template;
+let header_template;
+let footer_template;
 
 function initializeHeader() {
-    headerTemplate = `
+    header_template = `
     <div style="">
     <div style="background:white;background-color:white;margin:0px auto;max-width:1200px;">
       <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:white;background-color:white;width:100%;">
@@ -18,7 +19,7 @@ function initializeHeader() {
                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
                   <tr>
                     <td align="right" style="font-size:0px;padding:10px 25px;word-break:break-word;">
-                      <div style="font-family:Helvetica Neue;font-size:20px;font-style:italic;line-height:1;text-align:right;color:#626262;">sdasdasdasdad</div>
+                      <textarea rows="4" cols="4" style="font-family:Helvetica Neue;font-size:20px;font-style:italic;line-height:1;text-align:right;color:#626262;width:50%;"></textarea>
                     </td>
                   </tr>
                 </table>
@@ -47,6 +48,12 @@ function initializeHeader() {
         </tbody>
       </table>
     </div>
+  </div>`;
+}
+
+function initializeFooter(){
+    footer_template = `
+    <div style="">
     <div style="background:white;background-color:white;margin:0px auto;max-width:1200px;">
       <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:white;background-color:white;width:100%;">
         <tbody>
@@ -55,12 +62,27 @@ function initializeHeader() {
               <div class="mj-column-px-1200 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
                   <tr>
-                    <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
-                      <div style="font-family:Helvetica Neue;font-size:20px;font-style:italic;line-height:1;text-align:left;color:#626262;">
-                        <mj-raw>
-                          <div id="editor"></div>
-                        </mj-raw>
-                      </div>
+                    <td style="font-size:0px;padding:10px 25px;word-break:break-word;">
+                      <p style="border-top:solid 1px #000000;font-size:1;margin:0px auto;width:100%;"> </p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="background:white;background-color:white;margin:0px auto;max-width:1200px;">
+      <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:white;background-color:white;width:100%;">
+        <tbody>
+          <tr>
+            <td style="direction:ltr;font-size:0px;padding:20px 0;text-align:center;">
+              <div class="mj-column-px-1200 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+                <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
+                  <tr>
+                    <td align="right" style="font-size:0px;padding:10px 25px;word-break:break-word;">
+                      <textarea rows="4" cols="4" style="font-family:Helvetica Neue;font-size:20px;font-style:italic;line-height:1;text-align:right;color:#626262;width:50%;"></textarea>
                     </td>
                   </tr>
                 </table>
@@ -74,7 +96,7 @@ function initializeHeader() {
 }
 
 function initializeTemplate1() {
-    spalte1Template = `
+    spalte1_template = `
   <div style="">
     <div style="background:white;background-color:white;margin:0px auto;max-width:1200px;">
       <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:white;background-color:white;width:100%;">
@@ -113,7 +135,7 @@ function initializeTemplate1() {
 }
 
 function initializeTemplate2() {
-    spalte2Template = `
+    spalte2_template = `
 <div style="">
     <div style="background:white;background-color:white;margin:0px auto;max-width:1200px;">
       <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:white;background-color:white;width:100%;">
@@ -164,7 +186,7 @@ function initializeTemplate2() {
 }
 
 function initializeTemplate3() {
-    spalte3Template = `
+    spalte3_template = `
 <div style="">
     <div style="background:white;background-color:white;margin:0px auto;max-width:1200px;">
       <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:white;background-color:white;width:100%;">
@@ -227,7 +249,7 @@ function initializeTemplate3() {
 }
 
 function initializeTrennlinie() {
-    trennlinieTemplate = `<div style="">
+    trennlinie_template = `<div style="">
     <div style="background-color:white;margin:0px auto;max-width:1200px;">
       <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;">
         <tbody>
@@ -243,7 +265,11 @@ function initializeTrennlinie() {
 }
 
 function reset() {
-    workPlace.innerHTML = "";
+    work_place.innerHTML = "";
+}
+
+function save(){
+    work_place.childNodes
 }
 
 function allowDrop(event) {
@@ -260,35 +286,48 @@ function drop(event) {
     let dragged;
     if (id === "spalte1") {
         initializeTemplate1();
-        dragged = spalte1Template;
+        dragged = spalte1_template;
     } else if (id === "spalte2") {
         initializeTemplate2();
-        dragged = spalte2Template;
+        dragged = spalte2_template;
     } else if (id === "spalte3") {
         initializeTemplate3();
-        dragged = spalte3Template;
+        dragged = spalte3_template;
     } else if (id === "trennlinie") {
         initializeTrennlinie();
-        dragged = trennlinieTemplate;
+        dragged = trennlinie_template;
     }
-    if (workPlace.childElementCount > 0) {
-        for (let i = 0; i < workPlace.childElementCount; i++) {
-            let contains = workPlace.children[i].contains(event.target);
+    if (work_place.childElementCount > 0) {
+        for (let i = 0; i < work_place.childElementCount; i++) {
+            let contains = work_place.children[i].contains(event.target);
             if (contains) {
                 let newSection = document.createElement("div");
-                workPlace.insertBefore(newSection, workPlace.children[i].nextSibling);
+                newSection.className = id;
                 newSection.innerHTML += dragged;
+                work_place.insertBefore(newSection, work_place.children[i].nextSibling);
                 var editor = new FroalaEditor('#editor');
+                let footer = document.getElementById("footer");
+                work_place.insertBefore(footer, work_place.lastChild.nextSibling);
                 break;
             }
         }
     } else {
-        let newSection = document.createElement("div");
-        workPlace.appendChild(newSection);
-        newSection.style.marginTop = "30px";
         initializeHeader();
-        newSection.innerHTML += headerTemplate;
-        let editor = new FroalaEditor('#editor')
+        let header = document.createElement("div");
+        header.id = "header";
+        header.innerHTML += header_template;
+        header.style.marginTop = "30px";
+        work_place.appendChild(header);
+        let newSection = document.createElement("div");
+        newSection.className = id;
+        newSection.innerHTML += dragged;
+        work_place.appendChild(newSection);
+        var editor = new FroalaEditor('#editor');
+        initializeFooter();
+        let footer = document.createElement("div");
+        footer.id = "footer";
+        footer.innerHTML += footer_template;
+        work_place.appendChild(footer);
     }
-    workPlace.style.overflowY = "scroll";
+    work_place.style.overflowY = "scroll";
 }
