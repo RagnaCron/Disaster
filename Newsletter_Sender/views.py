@@ -27,12 +27,10 @@ class SendEmail(FormView):
 	template_name = 'Newsletter_Sender/Newsletter_Sender.html'
 	success_url = '/Newsletter/Overview/'  # TODO: SUCCESS PAGE
 
-	# def get(self, request, *args, **kwargs):
-	# 	contact = ContactForm()
-	# 	# if request.method == 'GET':
-	# 	return render(request, self.template_name, {'email_form': contact})
-	# 	# return redirect(self.success_url)
+	def get(self, request, *args, **kwargs):
+		contact = ContactForm()
+		return render(request, self.template_name, {'contact': contact})
 
 	def post(self, request, *args, **kwargs):
 		contact = ContactForm(self, args, kwargs)
-		return redirect(self.success_url)
+		return render(self.request, self.template_name, {'contact': contact})
