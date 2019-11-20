@@ -8,16 +8,25 @@
 
     <div class="container d-flex justify-content-center align-items-center" style="height: 90%">
         <div class="card" style="width: 18rem; height: 27rem; margin:50px;">
-            <a>
+            <a href="{% url 'editor:create' 0 %}" style="height:100%;text-decoration: none;">
                 <div class="card-body">
-                <h1 class="card-title">Basic Template</h1>
-            </div>
+                    <h1 class="card-title text-dark">Empty Template</h1>
+                </div>
             </a>
         </div>
         <div class="card" style="width: 18rem; height: 27rem; margin:50px;">
-            <div class="card-body">
-                <h1 class="card-title">Business Template</h1>
-            </div>
+            <a href="{% url 'editor:create' 1 %}" style="height:100%;text-decoration: none;">
+                <div class="card-body">
+                    <h1 class="card-title text-dark">Basic Template</h1>
+                </div>
+            </a>
+        </div>
+        <div class="card" style="width: 18rem; height: 27rem; margin:50px;">
+            <a href="{% url 'editor:create' 2 %}" style="height:100%;text-decoration: none;">
+                <div class="card-body">
+                    <h1 class="card-title text-dark">Business Template</h1>
+                </div>
+            </a>
         </div>
     </div>
 

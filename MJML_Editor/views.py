@@ -7,5 +7,5 @@ def editor(request):
     return render(request, "MJML_Editor/MJML_Editor.html")
 
 
-def create(request):
-    return render(request, "MJML_Editor/MJML_Create.html")
+def create(request, template):
+    return render(request, "MJML_Editor/MJML_Create.html", {'template' : template})

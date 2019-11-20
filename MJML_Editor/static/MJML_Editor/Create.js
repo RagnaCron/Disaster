@@ -6,12 +6,16 @@ let spalte3_template;
 let trennlinie_template;
 let header_template;
 let footer_template;
+let font;
+let template_id;
+let color;
+let background;
 
 function initializeHeader() {
     header_template = `
     <div style="">
-    <div style="background:white;background-color:white;margin:0px auto;max-width:1200px;">
-      <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:white;background-color:white;width:100%;">
+    <div style="background-color:${background};margin:0px auto;max-width:1200px;">
+      <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color:${background};width:100%;">
         <tbody>
           <tr>
             <td style="direction:ltr;font-size:0px;padding:20px 0;text-align:center;">
@@ -19,7 +23,7 @@ function initializeHeader() {
                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
                   <tr>
                     <td align="right" style="font-size:0px;padding:10px 25px;word-break:break-word;">
-                      <textarea rows="4" cols="4" style="font-family:Helvetica Neue;font-size:20px;font-style:italic;line-height:1;text-align:right;color:#626262;width:50%;"></textarea>
+                      <textarea rows="4" cols="4" style="font-family:${font};font-size:20px;line-height:1;text-align:right;color:${color};background-color:${background};width:50%;border-color: black;"></textarea>
                     </td>
                   </tr>
                 </table>
@@ -29,8 +33,8 @@ function initializeHeader() {
         </tbody>
       </table>
     </div>
-    <div style="background:white;background-color:white;margin:0px auto;max-width:1200px;">
-      <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:white;background-color:white;width:100%;">
+    <div style="background:white;background-color:${background};margin:0px auto;max-width:1200px;">
+      <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color:${background};width:100%;">
         <tbody>
           <tr>
             <td style="direction:ltr;font-size:0px;padding:20px 0;text-align:center;">
@@ -54,8 +58,8 @@ function initializeHeader() {
 function initializeFooter(){
     footer_template = `
     <div style="">
-    <div style="background:white;background-color:white;margin:0px auto;max-width:1200px;">
-      <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:white;background-color:white;width:100%;">
+    <div style="background-color:${background};margin:0px auto;max-width:1200px;">
+      <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color:${background};width:100%;">
         <tbody>
           <tr>
             <td style="direction:ltr;font-size:0px;padding:20px 0;text-align:center;">
@@ -73,8 +77,8 @@ function initializeFooter(){
         </tbody>
       </table>
     </div>
-    <div style="background:white;background-color:white;margin:0px auto;max-width:1200px;">
-      <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:white;background-color:white;width:100%;">
+    <div style="background-color:${background};margin:0px auto;max-width:1200px;">
+      <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color:${background};width:100%;">
         <tbody>
           <tr>
             <td style="direction:ltr;font-size:0px;padding:20px 0;text-align:center;">
@@ -82,7 +86,7 @@ function initializeFooter(){
                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
                   <tr>
                     <td align="right" style="font-size:0px;padding:10px 25px;word-break:break-word;">
-                      <textarea rows="4" cols="4" style="font-family:Helvetica Neue;font-size:20px;font-style:italic;line-height:1;text-align:right;color:#626262;width:50%;"></textarea>
+                      <textarea rows="4" cols="4" style="font-family:${font};font-size:20px;line-height:1;text-align:right;color:${color};background-color:${background};width:50%;border-color: black;"></textarea>
                     </td>
                   </tr>
                 </table>
@@ -112,7 +116,7 @@ function initializeTemplate1() {
                           <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
                             <tr>
                               <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
-                                <div style="font-family:Helvetica Neue;font-size:20px;font-style:italic;line-height:1;text-align:left;color:#626262;">
+                                <div style="font-family:${font};font-size:20px;line-height:1;text-align:left;color:#626262;">
                                   <mj-raw>
                                     <div id="editor"></div></mj-raw>
                                 </div>
@@ -151,7 +155,7 @@ function initializeTemplate2() {
                           <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
                             <tr>
                               <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
-                                <div style="font-family:Helvetica Neue;font-size:20px;font-style:italic;line-height:1;text-align:left;color:#626262;">
+                                <div style="font-family:${font};font-size:20px;line-height:1;text-align:left;color:#626262;">
                                   <mj-raw>
                                     <div id="editor"></div></mj-raw>
                                 </div>
@@ -163,7 +167,7 @@ function initializeTemplate2() {
                           <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
                             <tr>
                               <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
-                                <div style="font-family:Helvetica Neue;font-size:20px;font-style:italic;line-height:1;text-align:left;color:#626262;">
+                                <div style="font-family:${font};font-size:20px;line-height:1;text-align:left;color:#626262;">
                                   <mj-raw>
                                     <div id="editor"></div></mj-raw>
                                 </div>
@@ -202,7 +206,7 @@ function initializeTemplate3() {
                           <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
                             <tr>
                               <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
-                                <div style="font-family:Helvetica Neue;font-size:20px;font-style:italic;line-height:1;text-align:left;color:#626262;">
+                                <div style="font-family:${font};font-size:20px;line-height:1;text-align:left;color:#626262;">
                                   <mj-raw>
                                     <div id="editor"></div></mj-raw>
                                 </div>
@@ -214,7 +218,7 @@ function initializeTemplate3() {
                           <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
                             <tr>
                               <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
-                                <div style="font-family:Helvetica Neue;font-size:20px;font-style:italic;line-height:1;text-align:left;color:#626262;">
+                                <div style="font-family:Helvetica Neue;font-size:20px;line-height:1;text-align:left;color:#626262;">
                                   <mj-raw>
                                     <div id="editor"></div></mj-raw>
                                 </div>
@@ -226,7 +230,7 @@ function initializeTemplate3() {
                           <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
                             <tr>
                               <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
-                                <div style="font-family:Helvetica Neue;font-size:20px;font-style:italic;line-height:1;text-align:left;color:#626262;">
+                                <div style="font-family:${font};font-size:20px;line-height:1;text-align:left;color:#626262;">
                                   <mj-raw>
                                     <div id="editor"></div></mj-raw>
                                 </div>
@@ -265,12 +269,53 @@ function initializeTrennlinie() {
   </div>`;
 }
 
-function reset() {
+function loadHeaderAndFooter(){
     work_place.innerHTML = "";
+    initializeHeader();
+    let header = document.createElement("div");
+    header.id = "header";
+    header.innerHTML += header_template;
+    header.style.marginTop = "30px";
+    work_place.appendChild(header);
+    initializeFooter();
+    let footer = document.createElement("div");
+    footer.id = "footer";
+    footer.innerHTML += footer_template;
+    work_place.appendChild(footer);
+}
+
+function loadTemplate(template){
+    template_id = template;
+    const loader = document.getElementById("loader");
+    loader.remove();
+    if (template === 0){
+        font = "Arial";
+        color ="black";
+        background = "white";
+    }
+    else if(template === 1){
+        font = "Roboto";
+        color = "purple";
+        background = "lightsalmon";
+        loadHeaderAndFooter();
+    }
+    else if(template === 2){
+        font = "Arial";
+        color = "white";
+        background = "lightblue";
+        loadHeaderAndFooter();
+    }
+}
+
+function reset() {
+    let loader = document.createElement("img");
+    loader.id = "loader";
+    work_place.appendChild(loader);
+    loadTemplate(template_id);
 }
 
 function save(){
-    work_place.childNodes
+
 }
 
 function allowDrop(event) {
