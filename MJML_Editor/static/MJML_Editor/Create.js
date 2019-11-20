@@ -23,7 +23,7 @@ function initializeHeader() {
                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
                   <tr>
                     <td align="right" style="font-size:0px;padding:10px 25px;word-break:break-word;">
-                      <textarea rows="4" cols="4" style="font-family:${font};font-size:20px;line-height:1;text-align:right;color:${color};background-color:${background};width:50%;border-color: black;"></textarea>
+                      <textarea class="text" rows="4" cols="4" style="font-family:${font};font-size:20px;line-height:1;text-align:right;color:${color};background-color:${background};width:50%;border-color: black;"></textarea>
                     </td>
                   </tr>
                 </table>
@@ -42,7 +42,7 @@ function initializeHeader() {
                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
                   <tr>
                     <td style="font-size:0px;padding:10px 25px;word-break:break-word;">
-                      <p style="border-top:solid 1px #000000;font-size:1;margin:0px auto;width:100%;"> </p>
+                      <p style="border-top:solid 1px #000000;font-size:1;margin:0px auto;width:100%;"></p>
                     </td>
                   </tr>
                 </table>
@@ -55,7 +55,7 @@ function initializeHeader() {
   </div>`;
 }
 
-function initializeFooter(){
+function initializeFooter() {
     footer_template = `
     <div style="">
     <div style="background-color:${background};margin:0px auto;max-width:1200px;">
@@ -86,7 +86,7 @@ function initializeFooter(){
                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
                   <tr>
                     <td align="right" style="font-size:0px;padding:10px 25px;word-break:break-word;">
-                      <textarea rows="4" cols="4" style="font-family:${font};font-size:20px;line-height:1;text-align:right;color:${color};background-color:${background};width:50%;border-color: black;"></textarea>
+                      <textarea class="text" rows="4" cols="4" style="font-family:${font};font-size:20px;line-height:1;text-align:right;color:${color};background-color:${background};width:50%;border-color: black;"></textarea>
                     </td>
                   </tr>
                 </table>
@@ -118,7 +118,7 @@ function initializeTemplate1() {
                               <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
                                 <div style="font-family:${font};font-size:20px;line-height:1;text-align:left;color:#626262;">
                                   <mj-raw>
-                                    <div id="editor"></div></mj-raw>
+                                    <div class="editor"></div></mj-raw>
                                 </div>
                               </td>
                             </tr>
@@ -157,7 +157,7 @@ function initializeTemplate2() {
                               <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
                                 <div style="font-family:${font};font-size:20px;line-height:1;text-align:left;color:#626262;">
                                   <mj-raw>
-                                    <div id="editor"></div></mj-raw>
+                                    <div class="editor"></div></mj-raw>
                                 </div>
                               </td>
                             </tr>
@@ -169,7 +169,7 @@ function initializeTemplate2() {
                               <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
                                 <div style="font-family:${font};font-size:20px;line-height:1;text-align:left;color:#626262;">
                                   <mj-raw>
-                                    <div id="editor"></div></mj-raw>
+                                    <div class="editor"></div></mj-raw>
                                 </div>
                               </td>
                             </tr>
@@ -208,7 +208,7 @@ function initializeTemplate3() {
                               <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
                                 <div style="font-family:${font};font-size:20px;line-height:1;text-align:left;color:#626262;">
                                   <mj-raw>
-                                    <div id="editor"></div></mj-raw>
+                                    <div class="editor"></div></mj-raw>
                                 </div>
                               </td>
                             </tr>
@@ -220,7 +220,7 @@ function initializeTemplate3() {
                               <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
                                 <div style="font-family:Helvetica Neue;font-size:20px;line-height:1;text-align:left;color:#626262;">
                                   <mj-raw>
-                                    <div id="editor"></div></mj-raw>
+                                    <div class="editor"></div></mj-raw>
                                 </div>
                               </td>
                             </tr>
@@ -232,7 +232,7 @@ function initializeTemplate3() {
                               <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
                                 <div style="font-family:${font};font-size:20px;line-height:1;text-align:left;color:#626262;">
                                   <mj-raw>
-                                    <div id="editor"></div></mj-raw>
+                                    <div class="editor"></div></mj-raw>
                                 </div>
                               </td>
                             </tr>
@@ -269,7 +269,7 @@ function initializeTrennlinie() {
   </div>`;
 }
 
-function loadHeaderAndFooter(){
+function loadHeaderAndFooter() {
     work_place.innerHTML = "";
     initializeHeader();
     let header = document.createElement("div");
@@ -284,22 +284,21 @@ function loadHeaderAndFooter(){
     work_place.appendChild(footer);
 }
 
-function loadTemplate(template){
+function loadTemplate(template) {
     template_id = template;
     const loader = document.getElementById("loader");
     loader.remove();
-    if (template === 0){
+    if (template === 0) {
         font = "Arial";
-        color ="black";
+        color = "black";
         background = "white";
-    }
-    else if(template === 1){
+        work_place.innerHTML = "";
+    } else if (template === 1) {
         font = "Roboto";
         color = "purple";
         background = "lightsalmon";
         loadHeaderAndFooter();
-    }
-    else if(template === 2){
+    } else if (template === 2) {
         font = "Arial";
         color = "white";
         background = "lightblue";
@@ -314,8 +313,63 @@ function reset() {
     loadTemplate(template_id);
 }
 
-function save(){
+function save() {
+    let mjml = "";
+    for (let i = 0; i < work_place.childElementCount; i++) {
+        let child = work_place.children[i];
+        if (child.id === "header") {
+            let text = child.getElementsByClassName("text")[0];
+            let html = text.value;
+            mjml += `
+            <mjml>
+             <mj-body width="1200px">
+              <mj-section background-color="${background}">
+               <mj-column>
+                <mj-text font-family="${font}" font-size="20px" align="right" color="${color}">${html} </mj-text>
+               </mj-column>
+              </mj-section>
+              <mj-section background-color="${background}">
+               <mj-column>
+                <mj-divider border-width="1px"></mj-divider>
+               </mj-column>
+              </mj-section>`;
+        } else if (child.className === "spalte1") {
+            let editor = child.getElementsByClassName("editor")[0];
+            let text  = editor.getElementsByClassName("fr-element fr-view")[0];
+            let html = text.innerHTML;
+            mjml += `
+            <mj-section background-color="white">
+             <mj-column>
+              <mj-text font-size="20px" font-family="${font}" color="#626262">
+               <mj-raw>${html}</mj-raw>
+              </mj-text>
+             </mj-column>
+            </mj-section>`;
+        } else if (child.className === "spalte2") {
 
+        } else if (child.className === "spalte3") {
+
+        } else if (child.className === "trennlinie") {
+
+        } else if (child.id === "footer") {
+            let text = child.getElementsByClassName("text")[0];
+            let html = text.value;
+            mjml += `
+            <mj-section background-color="${background}">
+               <mj-column>
+                <mj-divider border-width="1px"></mj-divider>
+               </mj-column>
+              </mj-section>
+              <mj-section background-color="${background}">
+               <mj-column>
+                <mj-text font-family="${font}" font-size="20px" align="right" color="${color}">${html}</mj-text>
+               </mj-column>
+              </mj-section>
+             </mj-body>
+            </mjml>`;
+        }
+    }
+    console.log(mjml);
 }
 
 function allowDrop(event) {
@@ -351,7 +405,7 @@ function drop(event) {
                 newSection.className = id;
                 newSection.innerHTML += dragged;
                 work_place.insertBefore(newSection, work_place.children[i].nextSibling);
-                var editor = new FroalaEditor('#editor');
+                var editor = new FroalaEditor('.editor');
                 let footer = document.getElementById("footer");
                 work_place.insertBefore(footer, work_place.lastChild.nextSibling);
                 break;
