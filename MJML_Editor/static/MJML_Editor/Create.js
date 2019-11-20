@@ -350,11 +350,16 @@ function save() {
         } else if (child.className === "spalte3") {
 
         } else if (child.className === "trennlinie") {
-
+            mjml += `
+            <mj-section width="100%" background-color="white">
+               <mj-column>
+                <mj-divider padding="0" width="100%" border-width="1px"></mj-divider>
+               </mj-column>
+              </mj-section>`;
         } else if (child.id === "footer") {
             let text = child.getElementsByClassName("text")[0];
             let html = text.value;
-            mjml += `
+            mjml += `s
             <mj-section background-color="${background}">
                <mj-column>
                 <mj-divider border-width="1px"></mj-divider>
