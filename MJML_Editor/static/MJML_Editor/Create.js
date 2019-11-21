@@ -346,9 +346,53 @@ function save() {
              </mj-column>
             </mj-section>`;
         } else if (child.className === "spalte2") {
-
+            let editor = child.getElementsByClassName("editor")[0];
+            let text  = editor.getElementsByClassName("fr-element fr-view")[0];
+            let html = text.innerHTML;
+            let editor2 = child.getElementsByClassName("editor")[1];
+            let text2  = editor2.getElementsByClassName("fr-element fr-view")[0];
+            let html2 = text2.innerHTML;
+            mjml += `
+            <mj-section background-color="white">
+             <mj-column>
+              <mj-text font-size="20px" font-family="${font}" color="#626262">
+               <mj-raw>${html}</mj-raw>
+              </mj-text>
+             </mj-column>
+             <mj-column>
+              <mj-text font-size="20px" font-family="${font}" color="#626262">
+               <mj-raw>${html2}</mj-raw>
+              </mj-text>
+             </mj-column>
+            </mj-section>`;
         } else if (child.className === "spalte3") {
-
+            let editor = child.getElementsByClassName("editor")[0];
+            let text  = editor.getElementsByClassName("fr-element fr-view")[0];
+            let html = text.innerHTML;
+            let editor2 = child.getElementsByClassName("editor")[1];
+            let text2  = editor2.getElementsByClassName("fr-element fr-view")[0];
+            let html2 = text2.innerHTML;
+            let editor3 = child.getElementsByClassName("editor")[2];
+            let text3  = editor3.getElementsByClassName("fr-element fr-view")[0];
+            let html3 = text3.innerHTML;
+            mjml += `
+            <mj-section background-color="white">
+             <mj-column>
+              <mj-text font-size="20px" font-family="${font}" color="#626262">
+               <mj-raw>${html}</mj-raw>
+              </mj-text>
+             </mj-column>
+             <mj-column>
+              <mj-text font-size="20px" font-family="${font}" color="#626262">
+               <mj-raw>${html2}</mj-raw>
+              </mj-text>
+             </mj-column>
+             <mj-column>
+              <mj-text font-size="20px" font-family="${font}" color="#626262">
+               <mj-raw>${html3}</mj-raw>
+              </mj-text>
+             </mj-column>
+            </mj-section>`;
         } else if (child.className === "trennlinie") {
             mjml += `
             <mj-section width="100%" background-color="white">
@@ -427,7 +471,7 @@ function drop(event) {
         newSection.className = id;
         newSection.innerHTML += dragged;
         work_place.appendChild(newSection);
-        var editor = new FroalaEditor('#editor');
+        var editor = new FroalaEditor('.editor');
         initializeFooter();
         let footer = document.createElement("div");
         footer.id = "footer";
