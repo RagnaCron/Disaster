@@ -1,8 +1,10 @@
 # Created by https://www.gitignore.io/api/node,linux,python,pycharm,windows
 # Edit at https://www.gitignore.io/?templates=node,linux,python,pycharm,windows
 
-### Linux ###
-*~
+venv/*
+.idea
+db.*
+
 
 # temporary files which can be created if a process still has a handle open of a deleted file
 .fuse_hidden*
@@ -328,3 +330,13 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/node,linux,python,pycharm,windows
+.idea/Disaster.iml
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+
+db.sqlite3
+db.mysql
+
+package-lock.json

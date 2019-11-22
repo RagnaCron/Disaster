@@ -1,0 +1,11 @@
+{% extends 'commons/Base.html' %}
+
+{% block title %}Send Emails{% endblock title %}
+
+{% block header %}{% include 'commons/Header.html' %}{% endblock header %}
+
+{% load crispy_forms_tags %}
+
+{% block body %}
+    {% crispy contact %}
+{% endblock body %}
