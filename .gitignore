@@ -339,3 +339,4 @@ $RECYCLE.BIN/
 db.sqlite3
 db.mysql
 
+package-lock.json
