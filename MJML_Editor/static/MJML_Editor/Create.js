@@ -450,10 +450,10 @@ function drop(event) {
         for (let i = 0; i < work_place.childElementCount; i++) {
             let contains = work_place.children[i].contains(event.target);
             if (contains) {
-                let newSection = document.createElement("div");
-                newSection.className = id;
-                newSection.innerHTML += dragged;
-                work_place.insertBefore(newSection, work_place.children[i].nextSibling);
+                let new_section = document.createElement("div");
+                new_section.className = id;
+                new_section.innerHTML += dragged;
+                work_place.insertBefore(new_section, work_place.children[i].nextSibling);
                 var editor = new FroalaEditor('.editor');
                 let footer = document.getElementById("footer");
                 work_place.insertBefore(footer, work_place.lastChild.nextSibling);
@@ -467,10 +467,10 @@ function drop(event) {
         header.innerHTML += header_template;
         header.style.marginTop = "30px";
         work_place.appendChild(header);
-        let newSection = document.createElement("div");
-        newSection.className = id;
-        newSection.innerHTML += dragged;
-        work_place.appendChild(newSection);
+        let new_section = document.createElement("div");
+        new_section.className = id;
+        new_section.innerHTML += dragged;
+        work_place.appendChild(new_section);
         var editor = new FroalaEditor('.editor');
         initializeFooter();
         let footer = document.createElement("div");
