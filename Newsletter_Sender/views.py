@@ -6,7 +6,7 @@ from django.views.generic import FormView
 from Newsletter_Sender.forms.Newsletter_Sender.Sender_Form import ContactForm
 
 
-def send_email(request):
+def sendEmail(request):
 	subject = request.POST.get('subject', '')
 	message = request.POST.get('message', '')
 	from_email = request.POST.get('from_email', '')
