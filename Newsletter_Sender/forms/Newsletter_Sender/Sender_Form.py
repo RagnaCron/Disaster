@@ -23,7 +23,7 @@ class MultiEmailField(forms.Field):
 
 class ContactForm(forms.Form):
 	recipients = MultiEmailField(required=True)
-	from_email = forms.EmailField(required=True)
+	form_email = forms.EmailField(required=True)
 	subject = forms.CharField(required=True, max_length=100)
 	message = forms.CharField(widget=forms.Textarea, required=True)
 
